@@ -2,6 +2,13 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
+@import '~antd/dist/antd.css';
+
+html, body, #root, #root > div {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   position: relative;
   color: white;

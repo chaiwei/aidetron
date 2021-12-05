@@ -1,6 +1,9 @@
 import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
+
 import icon from '../../assets/icon.svg';
+import BasicLayout from './layouts/BasicLayout';
 import './App.css';
+// import './App.less';
 
 const Hello = () => {
   return (
@@ -42,9 +45,11 @@ const Hello = () => {
 export default function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" component={Hello} />
-      </Switch>
+        <BasicLayout>
+            <Switch>
+                <Route path="/" component={Hello} />
+            </Switch>
+        </BasicLayout>
     </Router>
   );
 }
