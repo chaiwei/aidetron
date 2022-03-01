@@ -72,12 +72,24 @@ const createWindow = async () => {
   };
 
   mainWindow = new BrowserWindow({
-    show: false,
-    width: 1024,
-    height: 728,
+    show: true,
+    width: 1200,
+    height: 900,
+    title: process.platform === "win32" ? "网易云音乐" : "test",
+    titleBarStyle: "hiddenInset",
+    frame: process.platform !== "win32",
+    backgroundColor: "#2e2c29",
+    hasShadow: process.platform !== "darwin",
     icon: getAssetPath('icon.png'),
+    // https://github.com/electron/electron/issues/9920#issuecomment-575839738
+    // https://stackoverflow.com/questions/57807459/how-to-use-preload-js-properly-in-
+    // https://www.electronjs.org/docs/latest/tutorial/security#6-do-not-disable-websecurity
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      webSecurity: true,
+      nodeIntegration: false, // is default value after Electron v5
+      contextIsolation: true, // protect against prototype pollution
+
     },
   });
 
