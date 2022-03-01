@@ -70,6 +70,27 @@ export default merge(baseConfig, {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         exclude: /\.module\.s?(c|a)ss$/,
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+          }, {
+            loader: 'css-loader', // translates CSS into CommonJS
+          }, {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
+                modifyVars: {
+                  'primary-color': '#0c7d5d',
+                  'link-color': '#0c7d5d',
+                },
+                javascriptEnabled: true,
+              },
+            },
+          }
+        ],
+      },
       //Font Loader
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

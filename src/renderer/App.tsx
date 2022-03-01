@@ -2,8 +2,9 @@ import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 
 import icon from '../../assets/icon.svg';
 import BasicLayout from './layouts/BasicLayout';
-import './App.css';
-// import './App.less';
+import './App.less';
+
+import About from './components/HelloWorld';
 
 const Hello = () => {
   return (
@@ -11,7 +12,7 @@ const Hello = () => {
       <div className="Hello">
         <img width="200px" alt="icon" src={icon} />
       </div>
-      <h1>electron-react-boilerplate</h1>
+      <h1>test</h1>
       <div className="Hello">
         <a
           href="https://electron-react-boilerplate.js.org/"
@@ -48,6 +49,7 @@ export default function App() {
         <BasicLayout>
             <Switch>
                 <Route path="/" component={Hello} />
+                <Route path="/view" component={About} />
             </Switch>
         </BasicLayout>
     </Router>
