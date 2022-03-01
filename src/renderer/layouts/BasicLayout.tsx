@@ -1,16 +1,16 @@
 import * as React from "react";
-import Header from './Header';
+import BasicHeader from '../components/BasicHeader';
 import Sidebar from './Sidebar';
 
 import { Layout as ALayout } from 'antd';
-const { Header, Content, Footer } = ALayout;
+const { Content, Footer } = ALayout;
 
 export default class BasicLayout extends React.Component <{}> {
   render() {
     return (
       <React.Fragment>
-        <ALayout style={{ height: "100vh", overflow: "auto" }}>
-          <Header />
+        <ALayout className="basic-layout" style={{ height: "100vh", overflow: "auto" }}>
+          <BasicHeader />
           <ALayout>
             <Sidebar />
             <ALayout style={{ padding: '0 24px 24px', marginLeft: 200 }}>

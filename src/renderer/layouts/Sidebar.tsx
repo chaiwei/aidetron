@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import { Layout, Menu } from 'antd';
 const { SubMenu } = Menu;
@@ -45,7 +46,7 @@ export default class Sidebar extends React.Component <{}> {
           style={{ height: '100%', borderRight: 0 }}
         >
           <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/about">About</Link></Menu.Item>
             <Menu.Item key="setting:2">Option 2</Menu.Item>
           </Menu.ItemGroup>
           <SubMenu key="sub1" title="subnav 1">
